@@ -13,7 +13,7 @@ class Cell {
 public:
 	void notify();
 	Cell(int x, int y);
-	std::string getColour();
+	char getColour();
 };
 
 #endif
