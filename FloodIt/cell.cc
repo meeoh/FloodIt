@@ -4,6 +4,11 @@
 using namespace std;
 
 Cell::Cell(int x, int y):x(x),y(y){
+	colour = 'R';
+}
+
+string Cell :: getColour(){
+	return colour;
 }
 
 
