@@ -15,7 +15,10 @@ Board::Board(int sizeX, int sizeY):board(sizeX, vector< Cell* >(sizeY)), sizeX(s
 			board[j][i] = new Cell(j, i);
 		}		
 	}
+
 	
+	
+	//set neighbours
 	
 }
 //operator<<
@@ -31,3 +34,6 @@ std::ostream& operator<<(std::ostream &out, const Board &b){
 	return out;
 }
 
+Cell* Board::getCell(int x, int y){
+	return board[x][y];
+}
