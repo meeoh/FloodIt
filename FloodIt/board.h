@@ -2,15 +2,18 @@
 #define _BOARD_
 
 #include "vector"
-//#include "cell.h"
+#include "cell.h"
+#include <iostream>
 
 class Board {
 
-	vector< vector < Cell* > > board;
+	std::vector< std::vector < Cell* > > board;
+	int sizeX, sizeY;
+	
 
 public:
 	Board(int sizeX, int sizeY);
-
+	friend std::ostream& operator<<(std::ostream& out, const Board &b);
 };
 
 
