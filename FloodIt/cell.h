@@ -2,18 +2,23 @@
 #define _CELL_
 
 #include <iostream>
+#include <vector>
 
 class Cell {
 
 	int numNeighbours;
-	Cell* neighbours[4];
+	std::vector< Cell* > neighbours;
 	int x,y;
 	char colour;
 
 public:
-	void notify();
+	void notifyNeighbours(char oldColour, char newColour);
+	void notify(char oldColour, char newColour);
 	Cell(int x, int y);
 	char getColour();
+	void switchColour(char newColour);
+	int getX();
+	int getY();
 };
 
 #endif
