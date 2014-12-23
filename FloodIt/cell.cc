@@ -29,6 +29,7 @@ char Cell :: getColour(){
 }
 
 void Cell::setNeighbour(Cell *cell){
+	//ADDS TO THE END OF THE VECTOR WTF
 	neighbours.push_back(cell);
 }
 
@@ -57,3 +58,8 @@ void Cell::switchColour(char newColour) {
 int Cell:: getX(){ return x; }
 int Cell::getY(){ return y; }
 
+void Cell :: printNeighbours(){
+
+	cout << neighbours[4]->getX();
+	cout << "TEST" << endl;
+}
