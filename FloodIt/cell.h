@@ -12,6 +12,7 @@ class Cell {
 	char colour;
 
 public:
+	void setNeighbour(Cell *);
 	void notifyNeighbours(char oldColour, char newColour);
 	void notify(char oldColour, char newColour);
 	Cell(int x, int y);

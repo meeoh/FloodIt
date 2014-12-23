@@ -28,6 +28,9 @@ char Cell :: getColour(){
 	return colour;
 }
 
+void Cell::setNeighbour(Cell *cell){
+	neighbours.push_back(cell);
+}
 
 
 //notify()

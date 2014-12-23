@@ -16,7 +16,11 @@ Board::Board(int sizeX, int sizeY):board(sizeX, vector< Cell* >(sizeY)), sizeX(s
 		}		
 	}
 
-	
+	for (int i = 0; i < sizeY; i++){
+		for (int j = 0; j < sizeX; j++){
+			//board[j][i]->
+		}
+	}
 	
 	//set neighbours
 	
