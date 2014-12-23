@@ -34,7 +34,7 @@ char Cell :: getColour(){
 void Cell::notify(char oldColour,char newColour){
 	cout << "old colour : " << oldColour << " newColour : " << newColour << endl;
 	if (oldColour == colour){			
-		this->switchColour(oldColour);		
+		this->switchColour(newColour);		
 	}	
 }
 
