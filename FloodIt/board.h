@@ -15,6 +15,10 @@ public:
 	Board(int sizeX, int sizeY);
 	friend std::ostream& operator<<(std::ostream& out, const Board &b);
 	Cell* getCell(int x, int y);
+	virtual ~Board();
+	int redCount, blueCount, yellowCount, greenCount;
+	void addColour(char colour);
+	bool hasWon();
 };
 
 
