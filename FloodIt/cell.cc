@@ -39,35 +39,29 @@ void Cell::setNeighbour(Cell *cell){
 
 //notify()
 //Checks if we need to do another colour switch
-void Cell::notify(char oldColour,char newColour){	
+void Cell::notify(char oldColour,char newColour, Cell *cell){	
 	if (oldColour == colour){			
-		this->switchColour(newColour);		
+		this->switchColour(newColour,cell);		
 	}	
 }
 
 //switchColour(char newColour)
 //Switches colour of current cell to 'newColour'
-void Cell::switchColour(char newColour) {
+void Cell::switchColour(char newColour, Cell *cell) {
 	//oldColour is our current colour
 	char oldColour = colour;	
 	//if we're assigning our cell to its current colour
 	//nothing happens
 	if (oldColour == newColour){return; }
-	colour = newColour;	
-	//Set notified to true so it doesnt get notified again
-	notified = true;
+	colour = newColour;			
 	//Add the colour to our total, so we can tell if a player has won
-	board->addColour(colour);
+	board->addColour(oldColour,colour);
 
 	//Loop through all neighbours, and call notify on each one
 	for (int i = 0; i < 4; i++){
 		//If the neighbour exists
-		if (neighbours[i]){
-			//If the neighbour hasnt been already notified
-			if (!neighbours[i]->notified){				
-				//Notify it!
-				neighbours[i]->notify(oldColour, newColour);
-			}
+		if (neighbours[i] && neighbours[i] != cell){			
+				neighbours[i]->notify(oldColour, newColour,this);
 		}
 	}
 }
