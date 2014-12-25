@@ -90,11 +90,16 @@ Board::~Board(){
 
 //addColour (char colour)
 //adds one to the count of the passed in 'colour'
-void Board::addColour(char colour){
-	if (colour == 'R'){ redCount++; }
-	else if (colour == 'B'){ blueCount++; }
-	else if (colour == 'G'){ greenCount++; }
+void Board::addColour(char oldColour, char newColour){
+	if (newColour == 'R'){ redCount++; }
+	else if (newColour == 'B'){ blueCount++; }
+	else if (newColour == 'G'){ greenCount++; }
 	else { yellowCount++; }
+
+	if (oldColour == 'R'){ redCount--; }
+	else if (oldColour == 'B'){ blueCount--; }
+	else if (oldColour == 'G'){ greenCount--; }
+	else { yellowCount--; }
 }
 
 //hasWon()

@@ -31,7 +31,7 @@ int main(){
 		cout << "What colour would you like to change the origin (top left corner) to (R,B,G,Y)?" << endl;
 		cin >> choice;
 		//uppercase their choice
-		origin->switchColour(choice);
+		origin->switchColour(choice,origin);
 		cout << *board;
 		if (board->hasWon()){ cout << "YOU WIN"; break; }
 		

@@ -17,7 +17,7 @@ public:
 	Cell* getCell(int x, int y);
 	virtual ~Board();
 	int redCount, blueCount, yellowCount, greenCount;
-	void addColour(char colour);
+	void addColour(char oldColour, char newColour);
 	bool hasWon();
 };
 
