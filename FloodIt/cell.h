@@ -8,11 +8,11 @@ class Board;
 
 class Cell {
 
-	int numNeighbours;
-	std::vector< Cell* > neighbours;
 	int x,y;
-	char colour;
 	Board *board;
+	std::vector< Cell* > neighbours;
+	int numNeighbours;
+	char colour;
 public:
 	int currentNeighbour;	
 	void setNeighbour(Cell *);

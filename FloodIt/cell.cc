@@ -7,7 +7,7 @@
 using namespace std;
 
 //Cell constructor
-Cell::Cell(int x, int y, Board *board):x(x),y(y),board(board),currentNeighbour(0),neighbours(4,NULL){	
+Cell::Cell(int x, int y, Board *board):x(x),y(y),board(board),neighbours(4,NULL),currentNeighbour(0){	
 	notified = 0;
 	//Generate random colour
 	int colourChoice = (rand()%3) + 1;	
